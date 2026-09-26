@@ -1,15 +1,18 @@
 .c-product-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
   gap: 2.4rem;
+  height: 54rem;
 }
 
 .c-product-card {
   min-width: 0;
   padding: 1.6rem 2.4rem;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #e5e5e5;
   border-radius: 0.4rem;
+  box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 12%);
 
   &__image-area {
     position: relative;
@@ -20,8 +23,8 @@
 
   &__badges {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -0.5rem;
+    left: -1.3rem;
     display: flex;
     gap: 0.4rem;
   }
@@ -38,6 +41,57 @@
 
     &--new {
       background: #159b2b;
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    top: -0.5rem;
+    right: -1.3rem;
+    display: flex;
+    gap: 0.6rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+
+    button {
+      display: grid;
+      width: 3rem;
+      height: 3rem;
+      color: #171526;
+      cursor: pointer;
+      background: #f3f2f5;
+      border: 0;
+      border-radius: 0.5rem;
+      place-items: center;
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &__stars {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    &__star {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+
+  &:hover &__actions,
+  &:focus-within &__actions {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    &__actions {
+      visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -72,6 +126,7 @@
     margin: 0.4rem 0;
     color: #666;
     font-size: 1.2rem;
+    font-weight: 500;
   }
 
   &__original-price {
@@ -89,7 +144,8 @@
   }
 
   &__stock {
-    margin: 1.6rem 0 2.4rem;
+
+    margin: 1.6rem 0 3.5rem;
     color: #159b2b;
     font-size: 1.3rem;
     font-weight: 700;
@@ -108,11 +164,23 @@
     align-items: center;
 
     button {
-      width: 2.8rem;
-      height: 3.6rem;
+      width: 1.2rem;
+      height: auto;
       cursor: pointer;
       background: transparent;
       border: 0;
+      display: grid;
+      place-items: center;
+
+      img {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    button:first-child {
+      justify-items: start;
+      padding: 0;
     }
 
     input {
@@ -123,6 +191,9 @@
       border: 1px solid #eee;
       border-radius: 0.4rem;
       appearance: textfield;
+      font-family: "DM Sans", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
 
       &::-webkit-inner-spin-button,
       &::-webkit-outer-spin-button {
@@ -141,7 +212,7 @@
     min-height: 4.4rem;
     padding: 0.8rem;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     font-family: "Wix Madefor Display", sans-serif;
     cursor: pointer;
     background: #df1269;
@@ -175,6 +246,8 @@
 @media (max-width: 700px) {
   .c-product-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
   }
 }
 

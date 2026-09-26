@@ -9,6 +9,12 @@ import gardenImage from "../assets/images/zahrada-lest.jpg";
 import cleaningImage from "../assets/images/cistenie-a-upratovanie.jpg";
 import handToolsImage from "../assets/images/rucne-naradie.jpg";
 import accessoriesImage from "../assets/images/prislusenstvo.jpg";
+import scaleIcon from "../assets/images/Scale.svg";
+import heartIcon from "../assets/images/Heart.svg";
+import whiteStar from "../assets/images/star_white.svg";
+import yellowStar from "../assets/images/star_yellow.svg";
+import minusIcon from "../assets/images/minus.svg";
+import plusIcon from "../assets/images/plus.svg";
 
 const productImages = {
     "1": dewaltImage,
@@ -225,13 +231,26 @@ const productCard = (product) => html`
                         <span class="c-product-card__badge c-product-card__badge--${badge.type}">${badge.label}</span>
                     `)}
             </div>
+            <div class="c-product-card__actions">
+                <button type="button" aria-label="Porovnať produkt">
+                    <img src="${scaleIcon}" alt="" />
+                </button>
+                <button type="button" aria-label="Pridať medzi obľúbené">
+                    <img src="${heartIcon}" alt="" />
+                </button>
+            </div>
             <img class="c-product-card__image" src="${productImages[product.id] ?? product.imageUrl}" alt="${product.name}" loading="lazy"/>
         </div>
 
         <div class="c-product-card__rating" aria-label="Hodnotenie ${product.rating} z 5, ${product.reviewCount} recenzií">
-            <span class="c-product-card__stars" aria-hidden="true">${Array.from({ length: 5 }, (_, index) => (index < product.rating ? "★" : "☆"))}</span>
-            <span>(${product.reviewCount})</span>
+            <span class="c-product-card__stars" aria-hidden="true">
+                ${Array.from({ length: 5 }, (_, index) => html`
+                <img class="c-product-card__star" src="${index < product.rating ? yellowStar : whiteStar}" alt=""/>
+                `)}
+            </span>
+            <span class="c-product-card__review-count">(${product.reviewCount})</span>
         </div>
+</span>
 
         <h3 class="c-product-card__name">${product.name}</h3>
         <p class="c-product-card__sku">${product.sku}</p>
@@ -242,9 +261,13 @@ const productCard = (product) => html`
 
         <div class="c-product-card__purchase">
             <div class="c-product-card__quantity">
-                <button type="button" aria-label="Znížiť množstvo" @click=${(event) => changeQuantity(event, -1)}>−</button>
+                <button type="button" aria-label="Znížiť množstvo" @click=${(event) => changeQuantity(event, -1)}>
+                    <img src="${minusIcon}" alt="" />
+                </button>
                 <input class="c-product-card__quantity-input" type="number" min="1" value="1" aria-label="Počet kusov"/>
-                <button type="button" aria-label="Zvýšiť množstvo" @click=${(event) => changeQuantity(event, 1)}>+</button>
+                <button type="button" aria-label="Zvýšiť množstvo" @click=${(event) => changeQuantity(event, 1)}>
+                    <img src="${plusIcon}" alt="" />
+                </button>
             </div>
             <button class="c-product-card__cart-button" type="button" @click=${(event) => addProductToCart(event, product)}>
                 <img class="c-product-card__cart-icon" src="${cartIcon}" alt="" />Do košíka
