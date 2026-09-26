@@ -64,11 +64,13 @@
     width: 2rem;
     height: 2rem;
     box-sizing: border-box;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1;
     background: #e51268;
     border-radius: 50%;
     place-items: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 600;
   }
 
   &__subcategories {
@@ -94,14 +96,14 @@
   &__link,
   &__link:visited {
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
-    text-underline-offset: 0.3rem;
+    text-underline-offset: 0.1rem;
   }
 
   &__link-label {
     text-decoration: underline;
-    text-underline-offset: 0.3rem;
+    text-underline-offset: 0.1rem;
   }
 
   &__link > span[aria-hidden="true"] {
