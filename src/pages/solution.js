@@ -77,6 +77,21 @@ const handleBannerClick = () => {
     // TODO: Navigate to products or filter
 };
 
+const boldPhrase = (description, textToBold) => {
+    const text = String(description ?? "");
+    const start = text.indexOf(textToBold);
+
+    if (start === -1) {
+        return text;
+    }
+
+    const end = start + textToBold.length;
+
+    return html`
+        ${text.slice(0, start)}<strong>${textToBold}</strong>${text.slice(end)}
+    `;
+};
+
 // Solution main banner
 const solutionBanner = (banner) => html`
     <div class="c-solution-banner">
@@ -84,7 +99,9 @@ const solutionBanner = (banner) => html`
         <div class="c-solution-banner__overlay"></div>
         <div class="c-solution-banner__content">
             <h1 class="c-solution-banner__content__title">${banner.title}</h1>
-            <div class="c-solution-banner__content__description">${banner.description}</div>
+            <div class="c-solution-banner__content__description">${boldPhrase(banner.description,
+                    "vŕtačky R-driller so zľavami až do 40 %. Spoľahlivý výkon, precízne spracovanie a dlhá životnosť")}
+            </div>
             <button class="c-solution-banner__content__button" @click=${() => handleBannerClick()}>
                 <span class="sb-text">${banner.ctaText}</span>
                 <svg
@@ -118,7 +135,7 @@ const solutionCta = (ctaBanner) => html`
         <div class="c-solution-cta__content">
             <h2 class="c-solution-cta__content__title">${ctaBanner.title}</h2>
 
-            <div class="c-solution-cta__content__description">${ctaBanner.description}</div>
+            <div class="c-solution-cta__content__description">${boldPhrase(ctaBanner.description, "výkonných a spoľahlivých vŕtačiek")}</div>
 
             <button class="c-solution-cta__content__button" @click=${() => handleCtaClick()}>
                 <span class="sc-text">${ctaBanner.ctaText}</span>
