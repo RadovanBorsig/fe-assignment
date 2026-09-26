@@ -1,0 +1,220 @@
+.c-form-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  overflow-y: auto;
+  width: min(58.6rem, calc(100% - 3.2rem));
+  max-width: none;
+  max-height: calc(100% - 3.2rem);
+  padding: 3.2rem 4rem;
+  color: #171526;
+  background: #fff;
+  border: 0;
+  border-radius: 0.4rem;
+  box-shadow: 0 1.6rem 6rem rgb(0 0 0 / 20%);
+  font-family: "DM Sans", sans-serif;
+
+  &::backdrop {
+    background: rgb(0 0 0 / 55%);
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.6rem;
+    padding: 0;
+    color: #171526;
+    font-size: 2.8rem;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+  }
+
+  &__header {
+    display: flex;
+    gap: 1.6rem;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2.8rem;
+
+    h2 {
+      margin: 0;
+      font-family: "Wix Madefor Display", sans-serif;
+      font-size: 2.4rem;
+      line-height: 1.4;
+    }
+
+    span {
+      flex: 0 0 auto;
+      padding-bottom: 0.6rem;
+      color: #d41465;
+      font-size: 1.3rem;
+    }
+  }
+
+  b {
+    color: #d41465;
+    font-weight: 400;
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.4rem 1.6rem;
+  }
+
+  &__field {
+    display: grid;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    &--full {
+      grid-column: 1 / -1;
+    }
+
+    input,
+    select {
+      box-sizing: border-box;
+      width: 100%;
+      height: 4.8rem;
+      padding: 0 1.6rem;
+      color: #424242;
+      font: inherit;
+      font-weight: 400;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 0.4rem;
+    }
+
+    select {
+      cursor: pointer;
+    }
+  }
+
+  &__status {
+    grid-column: 1 / -1;
+    margin: -1.6rem 0;
+    color: #b00020;
+    font-size: 1.3rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #d41465;
+    }
+  }
+
+  &__submit {
+    flex: 0 0 23.8rem;
+    min-height: 5rem;
+    padding: 1.2rem 2rem;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    background: #d41465;
+    border: 0;
+    border-radius: 0.4rem;
+    display: inline-flex;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      padding-left: 0.4rem;
+    }
+
+    &:disabled {
+      cursor: wait;
+      opacity: 0.65;
+    }
+  }
+
+  &__success {
+    padding: 1.6rem;
+    color: #14532d;
+    background: #dcfce7;
+    border-radius: 0.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .c-form-modal {
+    padding: 3.2rem 2rem;
+
+    &__header {
+      display: block;
+
+      span {
+        display: block;
+        margin-top: 0.8rem;
+      }
+    }
+
+    &__form {
+      grid-template-columns: 1fr;
+    }
+
+    &__field--full {
+      grid-column: auto;
+    }
+
+    &__actions {
+      flex-direction: column;
+      gap: 1.6rem;
+      align-items: stretch;
+    }
+
+    &__submit {
+      flex-basis: auto;
+      width: 100%;
+    }
+  }
+}
+
+.c-success-modal {
+  position: fixed;
+  inset: 0;
+  width: min(42rem, calc(100% - 3.2rem));
+  margin: auto;
+  padding: 3.2rem;
+  text-align: center;
+  background: #fff;
+  border: 0;
+  border-radius: 0.4rem;
+  box-shadow: 0 1.6rem 6rem rgb(0 0 0 / 20%);
+
+  &::backdrop {
+    background: rgb(0 0 0 / 55%);
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 2.4rem;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+
+  &__button {
+    padding: 1.2rem 2rem;
+    color: #fff;
+    background: #d41465;
+    border: 0;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+}
