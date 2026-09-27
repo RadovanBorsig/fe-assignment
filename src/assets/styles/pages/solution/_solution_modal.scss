@@ -182,39 +182,3 @@
     }
   }
 }
-
-.c-success-modal {
-  position: fixed;
-  inset: 0;
-  width: min(42rem, calc(100% - 3.2rem));
-  margin: auto;
-  padding: 3.2rem;
-  text-align: center;
-  background: #fff;
-  border: 0;
-  border-radius: 0.4rem;
-  box-shadow: 0 1.6rem 6rem rgb(0 0 0 / 20%);
-
-  &::backdrop {
-    background: rgb(0 0 0 / 55%);
-  }
-
-  &__close {
-    position: absolute;
-    top: 1rem;
-    right: 1.2rem;
-    font-size: 2.4rem;
-    background: transparent;
-    border: 0;
-    cursor: pointer;
-  }
-
-  &__button {
-    padding: 1.2rem 2rem;
-    color: #fff;
-    background: #d41465;
-    border: 0;
-    border-radius: 0.4rem;
-    cursor: pointer;
-  }
-}
