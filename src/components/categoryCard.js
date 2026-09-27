@@ -19,7 +19,8 @@ export const categoryCard = (category) => html`
         <img class="c-category-card__image" src="${categoryImages[category.id] ?? category.imageUrl}" alt="" loading="lazy"/>
         <div class="c-category-card__overlay"></div>
         <div class="c-category-card__content">
-            <h3 class="c-category-card__title">${category.name}
+            <h3 class="c-category-card__title">
+                <span>${category.name}</span>
                 <span class="c-category-card__count">${category.productCount}</span>
             </h3>
 

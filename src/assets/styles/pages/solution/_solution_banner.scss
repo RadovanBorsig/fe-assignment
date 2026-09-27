@@ -97,3 +97,108 @@
         }
     }
 }
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .c-solution-banner {
+        height: 48rem;
+    }
+
+    .c-solution-banner__content {
+        gap: 2.4rem;
+        padding: 5rem 4rem;
+        box-sizing: border-box;
+    }
+
+    .c-solution-banner__content__title,
+    .c-solution-banner__content__description {
+        width: 100%;
+        max-width: 52rem;
+    }
+
+    .c-solution-banner__content__title {
+        font-size: 4rem;
+        line-height: 1.2;
+    }
+
+    .c-solution-banner__content__description {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .c-solution-banner__content__button {
+        padding: 1.2rem 1.6rem;
+    }
+
+    .c-solution-banner__content__button .sb-text {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .c-solution-banner__image {
+        background-image: url("../../../images/banners/main-banner-mobile.jpg");
+        background-position: center;
+        background-size: cover;
+        border-radius: 0;
+    }
+
+    .l-solution__banner > .l-container {
+        width: 100%;
+        max-width: none;
+        padding-inline: 0;
+        box-sizing: border-box;
+    }
+
+    .c-solution-banner {
+        width: 100%;
+        height: 36rem;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    .c-solution-banner__content {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        gap: 1.6rem;
+        justify-content: flex-end;
+        padding: 2rem;
+        box-sizing: border-box;
+    }
+
+    .c-solution-banner__content__title,
+    .c-solution-banner__content__description {
+        width: 100%;
+        max-width: none;
+        white-space: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .c-solution-banner__content__title {
+        font-size: 3.2rem;
+        line-height: 1.2;
+    }
+
+    .c-solution-banner__content__description {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+
+    .c-solution-banner__content__button {
+        padding: 1rem 1.2rem;
+    }
+
+    .c-solution-banner__content__button .sb-text {
+        font-size: 1.4rem;
+    }
+
+    .c-solution-banner__content__button .sb-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .c-solution-banner__overlay {
+        border-radius: 0;
+    }
+}
