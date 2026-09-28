@@ -11,7 +11,7 @@ const categoryImages = {
     "zahrada-a-les": gardenImage,
     "cistenie-a-upratovanie": cleaningImage,
     "rucne-naradie": handToolsImage,
-    prislusenstvo: accessoriesImage,
+    "prislusenstvo": accessoriesImage,
 };
 
 export const categoryCard = (category) => html`

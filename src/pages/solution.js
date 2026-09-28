@@ -17,6 +17,9 @@ export const renderSolutionPage = (data) => {
         return html`<div class="l-solution">Loading...</div>`;
     }
 
+    const products = Array.isArray(data.products) ? data.products.filter(Boolean) : [];
+    const categories = Array.isArray(data.categories) ? data.categories.filter(Boolean) : [];
+
     console.log("data.banner:\n", data.banner);
     console.log("data.ctaBanner:\n", data.ctaBanner);
     console.log("data.products:\n", data.products);
@@ -36,13 +39,13 @@ export const renderSolutionPage = (data) => {
                         </div>
 
                         <div class="c-solution-content__products">
-                            ${data.products?.length
-                                ? html`
-                                      <div class="c-product-grid">
-                                          ${data.products.map((product) => productCard(product))}
-                                      </div>
-                                  `
-                                : html`<p>Momentálne nie sú dostupné žiadne produkty.</p>`}
+                            ${products.length
+                                    ? html`
+                                        <div class="c-product-grid">
+                                            ${products.map((product) => productCard(product))}
+                                        </div>
+                                    `
+                                    : html`<p>Momentálne nie sú dostupné žiadne produkty.</p>`}
                         </div>
                     </div>
                 </div>
@@ -60,14 +63,13 @@ export const renderSolutionPage = (data) => {
                 <div class="l-container">
                     <div class="c-solution-categories">
                         <h2 class="c-solution-categories__title">Top kategórie produktov</h2>
-                        ${data.categories?.length
-                            ? html`
-                                  <div class="c-category-grid">
-                                      ${data.categories.map((category) => categoryCard(category))}
-                                  </div>
-                              `
-                            : html`<p>Momentálne nie sú dostupné žiadne kategórie.</p>`}
-                    </div>
+                        ${categories.length
+                                ? html`
+                                    <div class="c-category-grid">
+                                        ${categories.map((category) => categoryCard(category))}
+                                    </div>
+                                `
+                                : html`<p>Momentálne nie sú dostupné žiadne kategórie.</p>`}</div>
                 </div>
             </div>
             ${formModal()}

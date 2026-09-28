@@ -3,7 +3,7 @@
 .c-solution-cta {
     position: relative;
     width: 64rem;
-    height: 54rem;
+    min-height: 54rem;
     overflow: hidden;
     border-radius: 0.8rem;
 
@@ -31,7 +31,7 @@
         gap: 2.4rem;
         align-items: flex-start;
         justify-content: flex-end;
-        height: 100%;
+        min-height: 54rem;
         padding: 4.8rem;
         color: #fff;
 
@@ -94,11 +94,11 @@
     }
 }
 
-@media (width <= 1100px) {
+@media (width <= 1250px) {
     .c-solution-cta {
         width: 100%;
         max-width: none;
-        height: 44rem;
+        min-height: 44rem;
         margin-left: 0;
         border-radius: 0.8rem;
     }
@@ -106,6 +106,10 @@
     .c-solution-cta__image,
     .c-solution-cta__overlay {
         border-radius: 0.8rem;
+    }
+
+    .c-solution-cta__content {
+        min-height: 44rem;
     }
 }
 
@@ -126,7 +130,6 @@
     }
 
     .c-solution-cta__content {
-        box-sizing: border-box;
         gap: 1.6rem;
         height: auto;
         min-height: 40rem;

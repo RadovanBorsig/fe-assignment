@@ -21,6 +21,8 @@
     overflow: hidden;
     color: #fff;
     border-radius: 0.8rem;
+    display: flex;
+    flex-direction: column;
 
     &__image,
     &__overlay {
@@ -44,10 +46,9 @@
     }
 
     &__content {
-        position: absolute;
-        right: 2.4rem;
-        bottom: 2.4rem;
-        left: 2.4rem;
+        position: relative;
+        margin-top: auto;
+        padding: 2.4rem;
     }
 
     &__title {
