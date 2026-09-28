@@ -19,9 +19,11 @@ export const solutionCta = (ctaBanner) => html`
         <div class="c-solution-cta__content">
             <h2 class="c-solution-cta__content__title">${ctaBanner.title}</h2>
 
-            <div class="c-solution-cta__content__description">${boldPhrase(ctaBanner.description, "výkonných a spoľahlivých vŕtačiek")}</div>
+            <div class="c-solution-cta__content__description">
+                ${boldPhrase(ctaBanner.description, "výkonných a spoľahlivých vŕtačiek")}
+            </div>
 
-            <button class="c-solution-cta__content__button" @click=${() => handleCtaClick()}>
+            <button class="c-solution-cta__content__button" @click=${handleCtaClick}>
                 <span class="sc-text">${ctaBanner.ctaText}</span>
 
                 <svg

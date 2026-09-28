@@ -1,276 +1,273 @@
 .c-product-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: minmax(0, 1fr);
-  gap: 2.4rem;
-  height: 54rem;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.4rem;
+    height: 54rem;
 }
 
 .c-product-card {
-  min-width: 0;
-  padding: 1.6rem 2.4rem;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0.4rem;
-  box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 12%);
+    min-width: 0;
+    padding: 1.6rem 2.4rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0.4rem;
+    box-shadow: 0 0.2rem 0.8rem rgb(0 0 0 / 12%);
 
-  &__image-area {
-    position: relative;
-    display: grid;
-    height: 22rem;
-    place-items: center;
-  }
-
-  &__badges {
-    position: absolute;
-    top: -0.5rem;
-    left: -1.3rem;
-    display: flex;
-    gap: 0.4rem;
-  }
-
-  &__badge {
-    padding: 0.4rem 0.8rem;
-    color: #fff;
-    font-size: 1.2rem;
-    border-radius: 0.3rem;
-
-    &--discount {
-      background: #81328a;
+    &__image-area {
+        position: relative;
+        display: grid;
+        place-items: center;
+        height: 22rem;
     }
 
-    &--new {
-      background: #159b2b;
-    }
-  }
-
-  &__actions {
-    position: absolute;
-    top: -0.5rem;
-    right: -1.3rem;
-    display: flex;
-    gap: 0.6rem;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-
-    button {
-      display: grid;
-      width: 3rem;
-      height: 3rem;
-      color: #171526;
-      cursor: pointer;
-      background: #f3f2f5;
-      border: 0;
-      border-radius: 0.5rem;
-      place-items: center;
+    &__badges {
+        position: absolute;
+        top: -0.5rem;
+        left: -1.3rem;
+        display: flex;
+        gap: 0.4rem;
     }
 
-    img {
-      width: 1.5rem;
-      height: 1.5rem;
+    &__badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 1.2rem;
+        color: #fff;
+        border-radius: 0.3rem;
+
+        &--discount {
+            background: #81328a;
+        }
+
+        &--new {
+            background: #159b2b;
+        }
     }
 
     &__stars {
-      display: flex;
-      gap: 0.2rem;
+        display: flex;
+        gap: 0.2rem;
+        font-size: 1.8rem;
+        color: #f2c500;
+        letter-spacing: 0.1rem;
     }
 
     &__star {
-      width: 1.8rem;
-      height: 1.8rem;
+        width: 1.8rem;
+        height: 1.8rem;
     }
-  }
 
-  &:hover &__actions,
-  &:focus-within &__actions {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  @media (hover: none) {
     &__actions {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
+        position: absolute;
+        top: -0.5rem;
+        right: -1.3rem;
+        display: flex;
+        gap: 0.6rem;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+            opacity 0.2s ease,
+            visibility 0.2s ease;
 
-  &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
+        button {
+            display: grid;
+            place-items: center;
+            width: 3rem;
+            height: 3rem;
+            color: #171526;
+            cursor: pointer;
+            background: #f3f2f5;
+            border: 0;
+            border-radius: 0.5rem;
+        }
 
-  &__rating {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-    margin-top: 1.2rem;
-    font-size: 1.2rem;
-  }
-
-  &__stars {
-    color: #f2c500;
-    font-size: 1.8rem;
-    letter-spacing: 0.1rem;
-  }
-
-  &__name {
-    margin: 0.8rem 0 0.4rem;
-    font-size: 1.6rem;
-  }
-
-  &__sku,
-  &__original-price,
-  &__vat-price {
-    margin: 0.4rem 0;
-    color: #666;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-
-  &__original-price {
-    margin-top: 1.6rem;
-    color: #222;
-    text-decoration: line-through;
-  }
-
-  &__sale-price {
-    margin: 0.2rem 0;
-    color: #e51268;
-    font-size: 2rem;
-    font-weight: 800;
-    font-family: "Wix Madefor Display", sans-serif;
-  }
-
-  &__stock {
-
-    margin: 1.6rem 0 3.5rem;
-    color: #159b2b;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: underline;
-  }
-
-  &__purchase {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
-  }
-
-  &__quantity {
-    display: flex;
-    gap: 0.6rem;
-    align-items: center;
-
-    button {
-      width: 1.2rem;
-      height: auto;
-      cursor: pointer;
-      background: transparent;
-      border: 0;
-      display: grid;
-      place-items: center;
-
-      img {
-        width: 1rem;
-        height: 1rem;
-      }
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 
-    button:first-child {
-      justify-items: start;
-      padding: 0;
+    &:hover &__actions,
+    &:focus-within &__actions {
+        visibility: visible;
+        opacity: 1;
     }
 
-    input {
-      box-sizing: border-box;
-      width: 4.2rem;
-      height: 3.6rem;
-      text-align: center;
-      border: 1px solid #eee;
-      border-radius: 0.4rem;
-      appearance: textfield;
-      font-family: "DM Sans", sans-serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-
-      &::-webkit-inner-spin-button,
-      &::-webkit-outer-spin-button {
-        margin: 0;
-        appearance: none;
-      }
+    @media (hover: none) {
+        &__actions {
+            visibility: visible;
+            opacity: 1;
+        }
     }
-  }
 
-  &__cart-button {
-    display: flex;
-    gap: 0.8rem;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    min-height: 4.4rem;
-    padding: 0.8rem;
-    color: #fff;
-    font-weight: 700;
-    font-family: "Wix Madefor Display", sans-serif;
-    cursor: pointer;
-    background: #df1269;
-    border: 0;
-    border-radius: 0.4rem;
-  }
+    &__image {
+        display: block;
+        width: 100%;
+        height: 22rem;
+        object-fit: contain;
+    }
 
-  &__cart-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-  &__feedback {
-    min-height: 1.8rem;
-    margin: 0.8rem 0 0;
-    font-size: 1.2rem;
-  }
+    &__rating {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        margin-top: 1.2rem;
+        font-size: 1.2rem;
+    }
 
+    &__name {
+        margin: 0.8rem 0 0.4rem;
+        font-size: 1.6rem;
+    }
+
+    &__sku,
+    &__original-price,
+    &__vat-price {
+        margin: 0.4rem 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #666;
+    }
+
+    &__original-price {
+        margin-top: 1.6rem;
+        color: #222;
+        text-decoration: line-through;
+    }
+
+    &__sale-price {
+        margin: 0.2rem 0;
+        font-family: "Wix Madefor Display", sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: #e51268;
+    }
+
+    &__stock {
+        margin: 1.6rem 0 3.5rem;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #159b2b;
+        text-decoration: underline;
+    }
+
+    &__purchase {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+    }
+
+    &__quantity {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+
+        button {
+            display: grid;
+            place-items: center;
+            width: 1.2rem;
+            height: auto;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+
+            img {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+        button:first-child {
+            justify-items: start;
+            padding: 0;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 4.2rem;
+            height: 3.6rem;
+            font-family: "DM Sans", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            appearance: textfield;
+            border: 1px solid #eee;
+            border-radius: 0.4rem;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                margin: 0;
+                appearance: none;
+            }
+        }
+    }
+
+    &__cart-button {
+        display: flex;
+        flex: 1;
+        gap: 0.8rem;
+        align-items: center;
+        justify-content: center;
+        min-height: 4.4rem;
+        padding: 0.8rem;
+        font-family: "Wix Madefor Display", sans-serif;
+        font-weight: 700;
+        color: #fff;
+        cursor: pointer;
+        background: #df1269;
+        border: 0;
+        border-radius: 0.4rem;
+    }
+
+    &__cart-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__feedback {
+        min-height: 1.8rem;
+        margin: 0.8rem 0 0;
+        font-size: 1.2rem;
+    }
 }
 
-@media (max-width: 1100px) {
-  .c-solution-content {
-    flex-direction: column;
-    gap: 2.4rem;
+@media (width <= 1250px) {
+    .c-solution-content {
+        flex-direction: column;
+        gap: 2.4rem;
 
-    &__cta {
-      width: 100%;
+        &__cta {
+            width: 100%;
+        }
     }
-  }
 }
 
-@media (max-width: 700px) {
-  .c-product-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
+@media (width <= 700px) {
+    .c-product-grid {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        height: auto;
+    }
 
-  .c-product-card__image-area {
-    position: relative;
-    height: 22rem;
-    min-width: 0;
-  }
+    .c-product-card__image-area {
+        position: relative;
+        min-width: 0;
+        height: 22rem;
+    }
 
-  .c-product-card__image {
-    position: absolute;
-    inset: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    margin: auto;
-    object-fit: contain;
-    z-index: 0;
-  }
+    .c-product-card__image {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        object-fit: contain;
+    }
 
-  .c-product-card__badges,
-  .c-product-card__actions {
-    z-index: 1;
-  }
+    .c-product-card__badges,
+    .c-product-card__actions {
+        z-index: 1;
+    }
 }

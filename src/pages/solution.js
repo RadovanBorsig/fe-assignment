@@ -36,33 +36,37 @@ export const renderSolutionPage = (data) => {
                         </div>
 
                         <div class="c-solution-content__products">
-                            ${ data.products?.length ? 
-                                    html`
-                                        <div class="c-product-grid">
-                                            ${data.products.map((product) => productCard(product))}
-                                        </div>
-                                    `
-                                    : html`<p>Momentálne nie sú dostupné žiadne produkty.</p>`
-                            }
+                            ${data.products?.length
+                                ? html`
+                                      <div class="c-product-grid">
+                                          ${data.products.map((product) => productCard(product))}
+                                      </div>
+                                  `
+                                : html`<p>Momentálne nie sú dostupné žiadne produkty.</p>`}
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div id="notification" class="c-notification" role="status" aria-live="polite" hidden></div>
+
+            <div
+                id="notification"
+                class="c-notification"
+                role="status"
+                aria-live="polite"
+                hidden
+            ></div>
 
             <div class="l-solution__categories">
                 <div class="l-container">
                     <div class="c-solution-categories">
                         <h2 class="c-solution-categories__title">Top kategórie produktov</h2>
-                        ${ data.categories?.length ? 
-                                html`
-                                    <div class="c-category-grid">
-                                        ${data.categories.map((category) => categoryCard(category))}
-                                    </div>
-                                `
-                                : html`<p>Momentálne nie sú dostupné žiadne kategórie.</p>`
-                        }
+                        ${data.categories?.length
+                            ? html`
+                                  <div class="c-category-grid">
+                                      ${data.categories.map((category) => categoryCard(category))}
+                                  </div>
+                              `
+                            : html`<p>Momentálne nie sú dostupné žiadne kategórie.</p>`}
                     </div>
                 </div>
             </div>

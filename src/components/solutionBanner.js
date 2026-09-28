@@ -16,9 +16,7 @@ export const boldPhrase = (description, textToBold) => {
 
     const end = start + textToBold.length;
 
-    return html`
-        ${text.slice(0, start)}<strong>${textToBold}</strong>${text.slice(end)}
-    `;
+    return html` ${text.slice(0, start)}<strong>${textToBold}</strong>${text.slice(end)} `;
 };
 
 // Solution main banner
@@ -28,10 +26,13 @@ export const solutionBanner = (banner) => html`
         <div class="c-solution-banner__overlay"></div>
         <div class="c-solution-banner__content">
             <h1 class="c-solution-banner__content__title">${banner.title}</h1>
-            <div class="c-solution-banner__content__description">${boldPhrase(banner.description,
-    "vŕtačky R-driller so zľavami až do 40 %. Spoľahlivý výkon, precízne spracovanie a dlhá životnosť")}
+            <div class="c-solution-banner__content__description">
+                ${boldPhrase(
+                    banner.description,
+                    "vŕtačky R-driller so zľavami až do 40 %. Spoľahlivý výkon, precízne spracovanie a dlhá životnosť"
+                )}
             </div>
-            <button class="c-solution-banner__content__button" @click=${() => handleBannerClick()}>
+            <button class="c-solution-banner__content__button" @click=${handleBannerClick}>
                 <span class="sb-text">${banner.ctaText}</span>
                 <svg
                     class="sb-icon"

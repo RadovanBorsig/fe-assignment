@@ -1,29 +1,29 @@
 .c-notification {
-  position: fixed;
-  right: 2.4rem;
-  bottom: 2.4rem;
-  z-index: 200;
-  width: min(42rem, calc(100% - 3.2rem));
-  padding: 1.6rem 2rem;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 0.6rem;
-  box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 20%);
-
-  &--success {
-    background: #16833a;
-  }
-
-  &--email-success {
+    position: fixed;
+    right: 2.4rem;
+    bottom: 2.4rem;
+    z-index: 200;
+    width: min(42rem, calc(100% - 3.2rem));
+    padding: 1.6rem 2rem;
+    font-weight: 700;
     color: #fff;
-    background-color: #16833a;
-    background-image: url("../../../images/gradient.jpg");
-    background-position: center;
-    background-size: cover;
-  }
+    border-radius: 0.6rem;
+    box-shadow: 0 0.8rem 2.4rem rgb(0 0 0 / 20%);
 
-  &--warning {
-    color: #302300;
-    background: #ffdf80;
-  }
+    &--success {
+        background: #16833a;
+    }
+
+    &--email-success {
+        color: #fff;
+        background-color: #16833a;
+        background-image: url("../../../images/gradient.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    &--warning {
+        color: #302300;
+        background: #ffdf80;
+    }
 }

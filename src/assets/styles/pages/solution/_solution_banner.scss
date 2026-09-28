@@ -30,6 +30,7 @@
 
     &__content {
         position: relative;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         gap: 3.2rem;
@@ -85,7 +86,7 @@
             .sb-text {
                 font-family: "Wix Madefor Display", sans-serif;
                 font-size: 1.6rem;
-                font-weight: 600;
+                font-weight: 700;
                 white-space: nowrap;
             }
 
@@ -98,7 +99,7 @@
     }
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
+@media (width >= 601px) and (width <= 900px) {
     .c-solution-banner {
         height: 48rem;
     }
@@ -106,7 +107,6 @@
     .c-solution-banner__content {
         gap: 2.4rem;
         padding: 5rem 4rem;
-        box-sizing: border-box;
     }
 
     .c-solution-banner__content__title,
@@ -134,45 +134,39 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
     .c-solution-banner__image {
         background-image: url("../../../images/banners/main-banner-mobile.jpg");
-        background-position: center;
-        background-size: cover;
         border-radius: 0;
     }
 
     .l-solution__banner > .l-container {
+        box-sizing: border-box;
         width: 100%;
         max-width: none;
         padding-inline: 0;
-        box-sizing: border-box;
     }
 
     .c-solution-banner {
+        box-sizing: border-box;
         width: 100%;
         height: 36rem;
-        box-sizing: border-box;
         border-radius: 0;
     }
 
     .c-solution-banner__content {
-        width: 100%;
-        max-width: none;
-        min-width: 0;
         gap: 1.6rem;
         justify-content: flex-end;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
         padding: 2rem;
-        box-sizing: border-box;
     }
 
     .c-solution-banner__content__title,
     .c-solution-banner__content__description {
         width: 100%;
         max-width: none;
-        white-space: normal;
-        overflow-wrap: normal;
-        word-break: normal;
     }
 
     .c-solution-banner__content__title {
